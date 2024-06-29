@@ -97,7 +97,7 @@ $(function(){
 				loop: true,
 				autoHeight: true,
 				margin: 40,
-				autoplay: true,
+				autoplay: false,
 				smartSpeed: 700,
 				items: 4,
 				stagePadding: 0,
@@ -136,7 +136,7 @@ $(function(){
 				loop: true,
 				autoHeight: true,
 				margin: 10,
-				autoplay: true,
+				autoplay: false,
 				smartSpeed: 700,
 				items: 4,
 				nav: false,
@@ -162,13 +162,13 @@ $(function(){
 			});
 		}
 		
-
+	
 		if ( $('.owl-single-text').length > 0 ) {
 			var owlText = $('.owl-single-text').owlCarousel({
 				loop: true,
 				autoHeight: true,
 				margin: 0,
-				autoplay: true,
+				autoplay: false,
 				autoplayHoverPause: true,
 				smartSpeed: 1200,
 				items: 1,
@@ -177,13 +177,13 @@ $(function(){
 			});
 		}
 		
-
+	
 		if ( $('.events-slider').length > 0 ) {
 			var owl = $('.events-slider').owlCarousel({
 				loop: true,
 				autoHeight: true,
 				margin: 0,
-				autoplay: true,
+				autoplay: false,
 				smartSpeed: 800,
 				mouseDrag: false,
 				touchDrag: false,
@@ -193,12 +193,12 @@ $(function(){
 			});
 		}
 		if ( $('.owl-single').length > 0 ) {
-
+	
 			var owl = $('.owl-single').owlCarousel({
 				loop: true,
 				autoHeight: true,
 				margin: 0,
-				autoplay: true,
+				autoplay: false,
 				autoplayHoverPause: true,
 				smartSpeed: 800,
 				mouseDrag: false,
@@ -208,26 +208,26 @@ $(function(){
 				navText: ['<span class="icon-keyboard_backspace"></span>','<span class="icon-keyboard_backspace"></span>'],
 				onChanged: changed,
 			});
-
+	
 			function changed(event) {
 				var i = event.item.index;
-
+	
 				if ( i == 0 || i == null) {
 					i = 1;
 				} else {
 					i = i - 1;
-
+	
 					$('.js-custom-dots li').removeClass('active');
 					$('.js-custom-dots li[data-index="'+i+'"]').addClass('active');
 				}				
 			}
-
+	
 			$('.js-custom-dots li').each(function(i) {
-
+	
 				var i = i + 1;
 				$(this).attr('data-index', i);
 			});
-
+	
 			$('.js-custom-dots a').on('click', function(e){
 				e.preventDefault();
 				owl.trigger('stop.owl.autoplay');
@@ -235,14 +235,14 @@ $(function(){
 				k = k - 1;
 				owl.trigger('to.owl.carousel', [k, 500]);
 			})
-
+	
 		}
-
-
+	
+	
 		if ( $('.wide-slider-testimonial').length > 0 ) {
 			$('.wide-slider-testimonial').owlCarousel({
 				loop:true,
-				autoplay: true,
+				autoplay: false,
 				margin:0,
 				animateOut: 'fadeOut',
 				animateIn: 'fadeIn',
@@ -267,8 +267,9 @@ $(function(){
 				}
 			});
 		}
-
+	
 	}
+	
 	owlPlugin();
 
 	var counter = function() {

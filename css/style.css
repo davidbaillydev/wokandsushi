@@ -654,8 +654,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     left: 0; }
   .hero-img-wrap .img-bowl {
     max-width: 500px;
-    top: 20px;
-    left: 20px;
+    top: 10px;
+    left: 0px;
     position: relative; }
     @media (max-width: 991.98px) {
       .hero-img-wrap .img-bowl {
