@@ -50,6 +50,26 @@
 
 <body>
 
+  <div id="game-popup-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:999999; justify-content:center; align-items:center; backdrop-filter: blur(8px); padding: 20px;">
+    
+    <div style="position:relative; width:100%; max-width:400px; height:650px; background:transparent;">
+        
+        <button onclick="closeWokGame()" 
+                style="position:absolute; top:-15px; right:-5px; z-index:1000001; background:#E63946; color:#ffffff; border:none; border-radius:50%; width:40px; height:40px; cursor:pointer; font-size:22px; font-weight:bold; box-shadow: 0 4px 15px rgba(0,0,0,0.4); display:flex; justify-content:center; align-items:center;">
+          ✕
+        </button>
+
+        <iframe 
+            id="game-iframe-wok"
+            src="" 
+            style="width:100%; height:100%; border:none; border-radius:25px; background: transparent;" 
+            allowtransparency="true"
+            allow="clipboard-write">
+        </iframe>
+    </div>
+</div>
+
+
   <div class="site-mobile-menu">
     <div class="site-mobile-menu-header">
       <div class="site-mobile-menu-close">
@@ -664,6 +684,47 @@
     </div>
   </div>
 
+  <script>
+    (function() {
+        // 1. Paramètres pour ton SaaS (Nom exact pour Supabase)
+        const config = {
+            name: "Wok N Sushi", 
+            logo: "https://woknsushi.com/images/logo.png",
+            google: "https://g.page/r/CdwF8R35T_ndEAE/review"
+        };
+
+        const overlay = document.getElementById('game-popup-overlay');
+        const iframe = document.getElementById('game-iframe-wok');
+
+        // Fonction pour ouvrir et charger le jeu
+        window.openWokGame = function() {
+            if(overlay && iframe) {
+                const params = new URLSearchParams(config);
+                iframe.src = `https://restaurantgame.netlify.app/?${params.toString()}`;
+                overlay.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Bloque le scroll du site
+            }
+        };
+
+        // Fonction pour fermer proprement
+        window.closeWokGame = function() {
+            overlay.style.display = 'none';
+            iframe.src = ''; // Stop le jeu et le son
+            document.body.style.overflow = ''; // Relance le scroll du site
+        };
+
+        // 2. Déclencheur automatique (3 secondes)
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(openWokGame, 3000);
+            
+            // Fermeture au clic sur le fond sombre
+            overlay.onclick = function(e) {
+                if (e.target === overlay) closeWokGame();
+            };
+        });
+    })();
+</script>
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -674,6 +735,8 @@
   <script src="js/aos.js"></script>
   <script src="js/custom.js"></script>
   <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async ></script>
+
+
 
 </body>
 
