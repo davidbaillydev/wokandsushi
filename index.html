@@ -1,743 +1,275 @@
-<!-- /*
-* Template Name: wok&food
-* Template Author: lcdigitale.fr
-* Author URI: https://lcdigitale.fr/
-*/ -->
-<!doctype html>
-<html lang="fr">
-
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="lcdigitale.fr">
-  <link rel="shortcut icon" href="favicon-32x32.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="lcdigitale.fr">
+    <link rel="shortcut icon" href="favicon-32x32.png">
 
-  <meta name="description" content="Découvrez le menu délicieux de Wok & Sushi à Colomiers. Nous proposons une variété de plats frais et savoureux, préparés avec des ingrédients de qualité." />
-  <meta name="keywords" content="Wok, Sushi, Colomiers, Restaurant, Menu, Cuisine Asiatique" />
+    <title>Wok & Sushi Colomiers | L'art du Wok & du Sushi</title>
+    <meta name="description" content="Découvrez le menu de Wok & Sushi à Colomiers. Woks minute, sushis frais et spécialités thaï. Commandez en ligne !">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- STYLE FORCÉ POUR GLORIAFOOD (Le fix) --- */
+        .glf-button {
+            background-color: #dc2626 !important;
+            color: white !important;
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 900 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            padding: 12px 28px !important;
+            border-radius: 9999px !important;
+            border: none !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            display: inline-block !important;
+            box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.3) !important;
+            font-size: 14px !important;
+            text-align: center !important;
+        }
+        .glf-button:hover {
+            background-color: #b91c1c !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 20px 25px -5px rgba(220, 38, 38, 0.4) !important;
+        }
 
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/animate.min.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
-  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-  <link rel="stylesheet" href="css/aos.css">
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="google-site-verification" content="AxSk9Ei1cSBboTqwZnCj-IP9b5JUjN_JeDp9BBCozR8" />
-  <meta name="description" content="Commandez en ligne pour emporter ou à récupérer. Chez Wok & Sushi Restaurant - Colomiers, vous découvrirez de délicieux plats de sushi, thaï et wok. Essayez nos plats savoureux, soigneusement préparés avec des ingrédients frais ! Chez Wok & Sushi Restaurant, notre recette du succès est simple – De bons plats et de l'attention font revenir les clients à chaque fois.">
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(220, 38, 38, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+        }
+        .pulse { animation: pulse-red 2s infinite; }
 
+        @keyframes rotating { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .rotating { animation: rotating 35s linear infinite; }
+        .rotating2 { animation: rotating 25s linear infinite reverse; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        .float-img { animation: float 5s ease-in-out infinite; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .animate-marquee { display: inline-flex; animation: marquee 25s linear infinite; }
 
-  <title>Restaurant Wok & Sushi - Plats à emporter - Colomiers - Commandez en ligne</title>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-401937026">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-401937026');
-</script>
-
-
+        body { font-family: 'Inter', sans-serif; background-color: #FAFAFA; }
+        .font-asian { font-family: 'Amatic SC', cursive; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
 
-<body>
+<body class="text-slate-900 overflow-x-hidden">
 
-  <div id="game-popup-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:999999; justify-content:center; align-items:center; backdrop-filter: blur(8px); padding: 20px;">
-    
-    <div style="position:relative; width:100%; max-width:400px; height:650px; background:transparent;">
+    <div id="game-popup-overlay" class="fixed inset-0 bg-black/95 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-sm">
+    <div class="relative w-full max-w-[400px] aspect-[9/16] bg-transparent rounded-3xl overflow-hidden">
+        <button onclick="closeWokGame()" class="absolute top-4 right-4 bg-red-600 text-white w-10 h-10 rounded-full font-bold z-[110] hover:scale-110 transition shadow-lg">✕</button>
         
-        <button onclick="closeWokGame()" 
-                style="position:absolute; top:-15px; right:-5px; z-index:1000001; background:#E63946; color:#ffffff; border:none; border-radius:50%; width:40px; height:40px; cursor:pointer; font-size:22px; font-weight:bold; box-shadow: 0 4px 15px rgba(0,0,0,0.4); display:flex; justify-content:center; align-items:center;">
-          ✕
-        </button>
-
-        <iframe 
-            id="game-iframe-wok"
-            src="" 
-            style="width:100%; height:100%; border:none; border-radius:25px; background: transparent;" 
-            allowtransparency="true"
-            allow="clipboard-write">
-        </iframe>
+        <iframe id="game-iframe-wok" src="" class="w-full h-full border-none" allow="clipboard-write"></iframe>
     </div>
 </div>
 
-
-  <div class="site-mobile-menu">
-    <div class="site-mobile-menu-header">
-      <div class="site-mobile-menu-close">
-        <span class="icofont-close js-menu-toggle"></span>
-      </div>
-    </div>
-    <div class="site-mobile-menu-body"></div>
-  </div>
-
-
-  <nav class="site-nav mb-5">
-    <div class="container-fluid">
-      <div class="site-navigation text-center">
-        <a href="index.html" class="logo menu-absolute m-0">Wok & Sushi<span class="text-primary">.</span></a>
-
-        <ul class="js-clone-nav d-none d-lg-inline-block site-menu">
-          <li class="active"><a href="index.html">Accueil</a></li>
-          <li>
-            <a href="menu.html">Menu</a>
-          </li>
-          <!-- <li><a href="events.html">Événements</a></li> -->
-          <li><a href="gallery.html">Galerie</a></li>
-          <li><a href="about.html">À propos</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-
-        <a href="#" data-glf-cuid="c8170d73-5d5e-4191-baae-dcbe6befeda4" data-glf-ruid="3f06883e-6ccd-4bea-8b71-ae52570ab7f9"  class="btn-book btn btn-primary btn-sm menu-absolute">Commande en ligne</a>
-
-        <a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
-          <span></span>
-        </a>
-
-      </div>
-    </div>
-  </nav>
-  <div class="untree_co-hero">
-    <div class="container">
-      <div class="row align-items-center justify-content-center">
-
-        <div class="col-12">
-          <div class="row align-items-center justify-content-between">
-
-            <div class="col-lg-5">
-              <h1 class="mb-4 heading" data-aos="fade-up" data-aos-delay="100">Wok & Sushi Restaurant</h1>
-              <div class="mb-4 desc" data-aos="fade-up" data-aos-delay="200">
-                <p>Contactez-nous au <a href="tel:+33561859259" target="_blank" class="link-highlight">0561859259</a>. Découvrez notre menu délicieux et réservez une table.</p>
-              </div>
-
-              <p class="mb-0" data-aos="fade-up" data-aos-delay="300"><a href="menu.html" class="btn btn-primary">Consultez notre menu</a></p>
-
-            </div>
-            <div class="col-lg-6 col-md-8 col-sm-10 mx-auto" data-aos="fade-up" data-aos-delay="100">
-              <div class="hero-img-wrap">
-                <span class="img-circle rotating">
-                  <img src="images/circle-two.png" alt="Image" class="img-fluid">
-                </span>
-                <span class="img-circle rotating2">
-                  <img src="images/circle-one.png" alt="Image" class="img-fluid">
-                </span>
-                <img src="images/home.webp" alt="Image" class="img-fluid img-bowl">
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div> <!-- /.row -->
-    </div> <!-- /.container -->
-
-    <!-- <ul class="list-unstyled social-hero-section mb-0">
-      <li data-aos="fade-left" data-aos-delay="0"><a href="#"><span class="icon-whatsapp"></span></a></li>
-      <li data-aos="fade-left" data-aos-delay="100"><a href="#"><span class="icon-instagram"></span></a></li>
-      <li data-aos="fade-left" data-aos-delay="200"><a href="#"><span class="icon-facebook"></span></a></li>
-      <li data-aos="fade-left" data-aos-delay="300"><a href="#"><span class="icon-twitter"></span></a></li>
-    </ul> -->
-  </div> <!-- /.untree_co-hero -->
-
-   
-  <div class="untree_co-section bg-img py-5 fixed overlay">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-7 text-center">
-          <h3 class="heading">Commandez en Ligne et Profitez d'un Service Privilégié !</h3>
-          <p>📲 Facilité et Rapidité
-            Avec notre interface intuitive, passer commande n'a jamais été aussi facile. En quelques clics, choisissez parmi notre large sélection de sushis, woks, desserts et boissons, et laissez-vous guider par notre système de commande rapide et sécurisé. </p>
-          <p class="mb-0"><a href="#"class="btn btn-primary" data-glf-cuid="c8170d73-5d5e-4191-baae-dcbe6befeda4" data-glf-ruid="3f06883e-6ccd-4bea-8b71-ae52570ab7f9">Passer votre Commande</a></p>
-          
-        </div>
-      </div>
-    </div> 
-  </div> 
-  
-  <div class="untree_co-section">
-    <div class="container">
-  
-      <div class="row mb-5">
-        <div class="col-lg-12 text-center">
-          <ul class="custom-nav js-custom-dots list-unstyled">
-            <li class="active"><a href="#">Côté Sushi 1</a></li>
-            <li><a href="#">Côté Sushi 2</a></li>
-            <li><a href="#">Plateaux Sushi 3</a></li>
-            <li><a href="#">Nos Wok Signature</a></li>
-            <!-- <li><a href="#">Desserts</a></li>
-            <li><a href="#">Boissons</a></li> -->
-          </ul>
-        </div>
-      </div>
-      <div class="owl-single no-dots owl-carousel">
-  
-        <!-- Côté Sushi 1 -->
-        <div class="item">
-          <div class="row mb-5">
-            <div class="col-12 text-center">
-              <span class="subtitle">Menu</span>
-              <h2 class="heading">Côté Sushi 1</h2>
-            </div>
-          </div>
-          <div class="row">
-            <!-- Entrée -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/1.webp" alt="Entrée Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Entrée 🥟</a></h3>
-                <p>Nems, Samossa, Gyoza, riz etc...</p>
-                <strong class="price">€6.90</strong>
-              </div>
-            </div>
-            <!-- Salades -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/2.webp" alt="Salade Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Salades 🥗</a></h3>
-                <p>Salades au choix etc...</p>
-                <strong class="price">€11.90</strong>
-              </div>
-            </div>
-            <!-- Brochette -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/3.webp" alt="Brochette Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Brochette 2 pièces</a></h3>
-                <p>Brochettes aux choix 🍖</p>
-                <strong class="price">€6.00</strong>
-              </div>
-            </div>
-            <!-- Chirashi -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/4.webp" alt="Chirashi Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Chirashi 🐟🐠</a></h3>
-                <p>Saumon, Thon au choix</p>
-                <strong class="price">€16.50</strong>
-              </div>
-            </div>
-            <!-- Poké Bowl -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/5.webp" alt="Poké Bowl Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Poké Bowl 🍛</a></h3>
-                <p>Saumon, Chicken etc...</p>
-                <strong class="price">€13.50</strong>
-              </div>
-            </div>
-            <!-- California -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/6.webp" alt="California Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">California 🍣</a></h3>
-                <p>Saumon, cheese, crevette etc...</p>
-                <strong class="price">€6.50</strong>
-              </div>
-            </div>
-            <!-- Flocon -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/7.webp" alt="Flocon Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Flocon x 6 🍣</a></h3>
-                <p>Saumon, cheese, crevette etc...</p>
-                <strong class="price">€6.50</strong>
-              </div>
-            </div>
-            <!-- Rainbows -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/8.webp" alt="Rainbows Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Rainbows x 6 🍣</a></h3>
-                <strong class="price">€7.50</strong>
-              </div>
-            </div>
-          </div>
-        </div> <!-- end Côté Sushi 1 -->
-  
-        <!-- Côté Sushi 2 -->
-        <div class="item">
-          <div class="row mb-5">
-            <div class="col-12 text-center">
-              <span class="subtitle">Menu</span>
-              <h2 class="heading">Côté Sushi 2</h2>
-            </div>
-          </div>
-          <div class="row">
-            <!-- Crispy -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/9.webp" alt="Crispy Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Crispy x 6 🍣🥢</a></h3>
-                <strong class="price">€7.50</strong>
-              </div>
-            </div>
-            <!-- Maki -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/10.webp" alt="Maki Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Maki x 6 🍣</a></h3>
-                <p>Maki sushi au choix</p>
-                <strong class="price">€5.00</strong>
-              </div>
-            </div>
-            <!-- Sushi -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/11.webp" alt="Sushi Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Sushi x 6 🍣🥢</a></h3>
-                <p>Sushi au choix</p>
-                <strong class="price">€11.00</strong>
-              </div>
-            </div>
-            <!-- Sashimi -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/12.webp" alt="Sashimi Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Sashimi x 6 🍣 + 🍚</a></h3>
-                <p>Accompagnement riz vinaigré</p>
-                <strong class="price">€8.00</strong>
-              </div>
-            </div>
-            <!-- Sushi Dragon Rolls -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/13.webp" alt="Sushi Dragon Rolls Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Sushi Dragon Rolls x 8 🍣🥢🍣</a></h3>
-                <strong class="price">€10.90</strong>
-              </div>
-            </div>
-            <!-- Fried Rolls -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/14.webp" alt="Fried Rolls Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Fried Rolls x 8 🍣🥢🍣</a></h3>
-                <strong class="price">€11.00</strong>
-              </div>
-            </div>
-          </div>
-        </div> <!-- end Côté Sushi 2 -->
-  
-        <!-- Plateaux Sushi 3 -->
-        <div class="item">
-          <div class="row mb-5">
-            <div class="col-12 text-center">
-              <span class="subtitle">Menu</span>
-              <h2 class="heading">Plateaux Sushi 3</h2>
-            </div>
-          </div>
-          <div class="row">
-            <!-- Sushi x 18 pièces -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/17.webp" alt="Sushi 18 pièces Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Sushi x 18 pièces 🍣🍣</a></h3>
-                <strong class="price">€18.00</strong>
-              </div>
-            </div>
-            <!-- Sushi Party x 50 pièces -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/15.webp" alt="Sushi Party 50 pièces Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Sushi Party x 50 pièces 🍣🍣</a></h3>
-                <strong class="price">€45.00</strong>
-              </div>
-            </div>
-            <!-- Sushi Family x 72 pièces -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/15.webp" alt="Sushi Family 72 pièces Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Sushi Family x 72 pièces 🍣🍣</a></h3>
-                <strong class="price">€64.00</strong>
-              </div>
-            </div>
-            <!-- Sushi Deluxe x 100 pièces -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/15.webp" alt="Sushi Deluxe 100 pièces Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Sushi Deluxe x 100 pièces 🍣🍣</a></h3>
-                <strong class="price">€85.00</strong>
-              </div>
-            </div>
-          </div>
-        </div> <!-- end Plateaux Sushi 3 -->
-  
-        <!-- Nos Wok Signature -->
-        <div class="item">
-          <div class="row mb-5">
-            <div class="col-12 text-center">
-              <span class="subtitle">Menu</span>
-              <h2 class="heading">Nos Wok Signature</h2>
-            </div>
-          </div>
-          <div class="row">
-            <!-- Wok de Nouilles au Poulet -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/wok/20.web.png" alt="Wok de Nouilles au Poulet Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Wok de Nouilles au Poulet 🥢🍜</a></h3>
-                <strong class="price">€12.00</strong>
-              </div>
-            </div>
-            <!-- Wok de Nouilles aux Crevettes -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/wok/23.webp" alt="Wok de Nouilles aux Crevettes Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Wok de Nouilles aux Crevettes 🥢🍤</a></h3>
-                <strong class="price">€13.00</strong>
-              </div>
-            </div>
-            <!-- Wok de Riz au Poulet -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/wok/22.webp" alt="Wok de Riz au Poulet Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Wok de Riz au Poulet 🥢🍚</a></h3>
-                <strong class="price">€11.50</strong>
-              </div>
-            </div>
-            <!-- Wok de Riz aux Crevettes -->
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/wok/21.webp" alt="Wok de Riz aux Crevettes Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Wok de Riz aux Crevettes 🥢🍚</a></h3>
-                <strong class="price">€12.50</strong>
-              </div>
-            </div>
-          </div>
-        </div> <!-- end Nos Wok Signature -->
-  
-        <!-- Desserts -->
-        <!-- <div class="item">
-          <div class="row mb-5">
-            <div class="col-12 text-center">
-              <span class="subtitle">Menu</span>
-              <h2 class="heading">Desserts</h2>
-            </div>
-          </div>
-          <div class="row">
-           
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/wok/dessert/24.webp" alt="Mochi Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Mochi 🍡</a></h3>
-                <p>Mochi ice cream</p>
-                <strong class="price">€4.00</strong>
-              </div>
-            </div>
-        
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/sushi1/wok/dessert/25.webp" alt="Dorayaki Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Dorayaki 🥞</a></h3>
-                <p>Sweet-filled pancakes</p>
-                <strong class="price">€3.50</strong>
-              </div>
-            </div>
-          </div>
-        </div> end Desserts -->
-  
-        <!-- Boissons -->
-        <!-- <div class="item">
-          <div class="row mb-5">
-            <div class="col-12 text-center">
-              <span class="subtitle">Menu</span>
-              <h2 class="heading">Boissons</h2>
-            </div>
-          </div>
-          <div class="row">
-          
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/soda.png" alt="Soda Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Soda 🥤</a></h3>
-                <strong class="price">€2.00</strong>
-              </div>
-            </div>
-         
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/the_glace.png" alt="Thé Glacé Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Thé Glacé 🥤🍵</a></h3>
-                <strong class="price">€2.50</strong>
-              </div>
-            </div>
-           
-            <div class="col-6 col-md-6 col-lg-4 mb-4">
-              <div class="product">
-                <a href="#" class="thumbnail"><img src="images/jus_fruit.png" alt="Jus de Fruit Image" class="img-fluid"></a>
-                <h3 class="mb-0"><a href="#">Jus de Fruit 🍹</a></h3>
-                <strong class="price">€3.00</strong>
-              </div>
-            </div>
-          </div>
-        </div> end Boissons -->
-  
-      </div>
-    </div>
-  </div>
-
-  <div class="untree_co-section bg-img fixed overlay" >
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-5 mb-5 mb-lg-0 mr-auto testimonial-wrap" data-aos="fade-up" data-aos-delay="0">
-          <span class="subtitle">Temoignages</span>
-          <h2 class="mb-5">Clients <strong class="text-primary">Satisfaits</strong></h2>
-          <div class="owl-carousel wide-slider-testimonial">
-            <div class="item">
-              <blockquote class="block-testimonial">
-                <div class="author">
-                  <img src="images/person_1.webp" alt="Free template by TemplateUX">
-                  <h3>Avis Google</h3>
-                  <p class="position mb-5">Repas sur place</p>
-                </div>
-                <p>
-                  <div class="quote">&ldquo;</div>
-                &ldquo;Je tiens à remercier et à féliciter les nouveaux propriétaires pour ce délicieux moment passé dans leur établissement.&rdquo;</p>
-              </blockquote>
-            </div>
-
-            <div class="item">
-              <blockquote class="block-testimonial">
-                <div class="author">
-                  <img src="images/person_1.webp" alt="Free template by TemplateUX">
-                  <h3>Avis Google</h3>
-                  <p class="position mb-5">Repas sur place</p>
-                </div>
-                <p>
-                  <div class="quote">&ldquo;</div>
-                &ldquo;Une très belle découverte 🥰
-                Excellente cuisine, tout est frais, beaucoup de saveur, d’une grande variété.
-                Les samossas succulents !!!
-                Accueil chaleureux et convivial.
-                Nous reviendrons avec plaisir !.&rdquo;</p>
-                
-              </blockquote>
-            </div>
-
-            <div class="item">
-              <blockquote class="block-testimonial">
-                <div class="author">
-                  <img src="images/person_1.webp" alt="Free template by TemplateUX">
-                  <h3>Avis Google</h3>
-                  <p class="position mb-5">Emporter</p>
-                </div>
-                <p>
-                  <div class="quote">&ldquo;</div>
-                &ldquo;C’est très très bon avec en plus une portion généreuse et un prix pas chers pour ce que c’est, je reviendrai 😋.&rdquo;</p>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 mt-4 mt-lg-0"  data-aos="fade-up" data-aos-delay="100">
-          <span class="subtitle">Gallerie</span>
-          <h2 class="mb-5">Nos <strong class="text-primary">Recettes</strong></h2>
-          <div class="row">
-            <div class="col-4 mb-4">
-              <a href="images/img_1.jpg" data-fancybox="gallery" class="gal"><img src="images/galery/galery/1.webp" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-4 mb-4">
-              <a href="images/img_2.jpg" data-fancybox="gallery" class="gal"><img src="images/galery/galery/2.webp" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-4 mb-4">
-              <a href="images/img_3.jpg" data-fancybox="gallery" class="gal"><img src="images/galery/galery/3.webp" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-4 mb-4">
-              <a href="images/img_4.jpg" data-fancybox="gallery" class="gal"><img src="images/galery/galery/4.webp" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-4 mb-4">
-              <a href="images/img_5.jpg" data-fancybox="gallery" class="gal"><img src="images/galery/galery/5.webp" alt="Image" class="img-fluid"></a>
-            </div>
-            <div class="col-4 mb-4">
-              <a href="images/img_6.jpg" data-fancybox="gallery" class="gal"><img src="images/galery/galery/6.webp" alt="Image" class="img-fluid"></a>
-            </div>
-
-            <div class="col-12">
-              <a href="#" data-glf-cuid="c8170d73-5d5e-4191-baae-dcbe6befeda4" data-glf-ruid="3f06883e-6ccd-4bea-8b71-ae52570ab7f9" class="btn btn-primary">Commander en ligne</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> <!-- .container -->
-  </div> <!-- /.untree_co-section -->
-  
-  
-  
-
-  <!-- <div class="untree_co-section">
-    <div class="container">
-
-      <div class="row mb-4 justify-content-center">
-        <div class="col-md-7 text-center mb-5" data-aos="fade-up" data-aos-delay="0">
-          <span class="subtitle">Upcoming Events</span>
-          <h2 class="heading">Enjoy <strong class="text-primary">Our Events</strong></h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-        </div>
-      </div>
-
-      <div class="events-slider owl-carousel" data-aos="fade-up" data-aos-delay="100">
-        <div class="row align-items-center justify-content-between">
-          <div class="col-lg-6">
-            <img src="images/img_rect_1-min.jpg" alt="Image" class="img-fluid rounded-10">
-          </div>
-          <div class="col-lg-5">
-            <span class="event-price d-block">€200.99</span>
-            <h3 class="mb-4 event-title">Birthday Party</h3>
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-4xl font-asian font-bold text-slate-900 tracking-wider">
+                WOK <span class="text-red-600">&</span> SUSHI
+            </a>
             
-            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-            <ul class="list-unstyled ul-check primary">
-              <li>Away behind the word</li>
-              <li>Bookmarksgrove right at the coast</li>
-              <li>Separated they live</li>
-            </ul>
-          </div>
-        </div>
+            <div class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-wider text-slate-600">
+                <a href="#menu" class="hover:text-red-600 transition">La Carte</a>
+                <a href="#testimonials" class="hover:text-red-600 transition">Avis</a>
+                <a href="#contact" class="hover:text-red-600 transition">Contact</a>
+            </div>
 
-        <div class="row align-items-center justify-content-between">
-          <div class="col-lg-6 order-lg-2">
-            <img src="images/img_rect_2-min.jpg" alt="Image" class="img-fluid rounded-10">
-          </div>
-          <div class="col-lg-5">
-            <span class="event-price d-block">€200.99</span>
-            <h3 class="mb-4 event-title">Guest Chef Nihgt Party</h3>
-
-            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-            <ul class="list-unstyled ul-check primary">
-              <li>Away behind the word</li>
-              <li>Bookmarksgrove right at the coast</li>
-              <li>Separated they live</li>
-            </ul>
-          </div>
+            <span data-glf-cuid="c8170d73-5d5e-4191-baae-dcbe6befeda4" data-glf-ruid="3f06883e-6ccd-4bea-8b71-ae52570ab7f9" 
+               class="glf-button pulse">
+                COMMANDER
+            </span>
         </div>
-      </div>
+    </nav>
+
+    <section id="home" class="relative pt-36 pb-20 px-6 overflow-hidden bg-[#FAFAFA]">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left z-10">
+                <div class="inline-block bg-slate-900 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
+                    ⛩️ L'EXCELLENCE ASIATIQUE À COLOMIERS
+                </div>
+                <h1 class="text-5xl md:text-[4.8rem] font-black uppercase tracking-tighter text-slate-900 leading-[1] mb-2">
+                    L'art du Wok
+                </h1>
+                <div class="font-asian text-7xl md:text-[8rem] text-red-600 leading-[0.8] mb-8 drop-shadow-sm">
+                    & du Sushi.
+                </div>
+                <p class="text-slate-500 text-lg mb-10 max-w-md mx-auto lg:mx-0 font-medium leading-relaxed">
+                    Savoir-faire artisanal et rapidité du Fast-Good. Chaque plat est une pièce maîtresse préparée à la minute.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <span data-glf-cuid="c8170d73-5d5e-4191-baae-dcbe6befeda4" data-glf-ruid="3f06883e-6ccd-4bea-8b71-ae52570ab7f9" 
+                          class="glf-button !px-10 !py-5 !text-base">
+                        Voir le Menu & Commander
+                    </span>
+                    <button onclick="openWokGame()" class="bg-white border-2 border-slate-200 text-slate-800 px-8 py-4 rounded-full font-bold hover:border-slate-300 hover:bg-slate-50 transition flex items-center justify-center gap-2">
+                        <span>🎁</span> Jouer & Gagner
+                    </button>
+                </div>
+            </div>
+
+            <div class="relative flex justify-center items-center py-10 mt-10 lg:mt-0">
+                <div class="absolute inset-0 bg-red-50 rounded-full blur-3xl scale-75 opacity-50 z-0"></div>
+                <img src="images/circle-two.png" class="absolute w-[85%] md:w-[75%] rotating opacity-20 z-0" alt="Déco">
+                <img src="images/circle-one.png" class="absolute w-[95%] md:w-[90%] rotating2 opacity-10 z-0" alt="Déco">
+                <img src="images/home.webp" class="relative w-[85%] max-w-[550px] float-img drop-shadow-2xl z-10 object-contain" alt="Wok Bowl">
+            </div>
+        </div>
+    </section>
+
+    <div class="relative z-20 -mt-6 pb-12">
+        <div class="bg-red-600 py-4 transform -rotate-1 shadow-xl overflow-hidden whitespace-nowrap border-y-4 border-red-700">
+            <div class="animate-marquee text-white font-black text-2xl uppercase tracking-[0.15em] opacity-95">
+                <span>⛩️ L'ART DU WOK • 🏮 SAVEURS D'ASIE • 🥢 FRAÎCHEUR GARANTIE • 🍣 SUSHI MASTER • 🐉 RECETTES MAISON • 🌸 ZEN & GOÛT • </span>
+                <span>⛩️ L'ART DU WOK • 🏮 SAVEURS D'ASIE • 🥢 FRAÎCHEUR GARANTIE • 🍣 SUSHI MASTER • 🐉 RECETTES MAISON • </span>
+            </div>
+        </div>
     </div>
-  </div> /.untree_co-section -->
- 
-  
 
-  <div class="site-footer">
-
-
-    <div class="container">
-
-
-      <div class="row">
-
-        <div class="col-lg-4">
-          <div class="widget">
-           <img src="images/logo.png" alt="" width="200" height="200">
-          </div> 
-        </div> 
-
-        <div class="col-lg-4">
-          <div class="widget">
-            <h3>A propos du repas<span class="text-primary">.</span> </h3>
-            <p>Nous sommes fiers de notre large gamme de spécialités, allant des sushis savamment préparés aux plats de wok savoureux, en passant par nos délicieux desserts et boissons. Que vous soyez un amateur de sushi, un fan de plats chauds ou que vous cherchiez quelque chose de sucré, vous trouverez toujours quelque chose à votre goût.</p>
-          </div> <!-- /.widget -->
-          <div class="widget">
-            <h3>Connectez-vous à</h3>
-            <ul class="list-unstyled social">
-              <li><a href="#"><span class="icon-instagram"></span></a></li>
-      
-              <li><a href="#"><span class="icon-facebook"></span></a></li>
-           
-            </ul>
-          </div> <!-- /.widget -->
-        </div> <!-- /.col-lg-3 -->
-
-
-        <div class="col-lg-4">
-          <div class="widget">
-            <h3>Contact</h3>
-            <address>1 Pl des Monts Dore, Colomiers 31770 </address>
-            <ul class="list-unstyled links mb-4">
-              <li><a href="tel://0612496482">+33 05 61 85 92 59</a></li>
-              <!-- <li><a href="tel://11234567890">+1(123)-456-7890</a></li> -->
-              <li><a href="mailto:contact@lcdigitale.fr">contact@wok&sushi.com.fr</a></li>
-            </ul>
-          </div> <!-- /.widget -->
-        </div> <!-- /.col-lg-3 -->
-
-      </div> <!-- /.row -->
-
-      <div class="row mt-5">
-        <div class="col-12 text-center">
-          <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. Tous droits réservés Wok and Sushi. &mdash; Conçu avec amour ❤️ par <a href="https://lcdigitale.fr" target="_blank" rel="nofollow noopener" class="link-highlight">lcdigitale.fr</a> &bullet; <a href="https://lcdigitale.fr" target="_blank" rel="nofollow noopener" class="link-highlight">License</a>
-          </p>
-
+    <section id="menu" class="max-w-7xl mx-auto px-6 py-16">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-12 gap-6">
+            <div>
+                <h2 class="text-6xl font-asian italic">Notre <span class="text-red-600">Savoir-faire</span></h2>
+                <p class="text-slate-500 font-bold uppercase text-xs tracking-widest mt-2">Cliquez pour choisir</p>
+            </div>
+            
+            <div class="flex overflow-x-auto pb-2 gap-2 no-scrollbar">
+                <button onclick="filter('sushi1', event)" class="filter-btn active bg-slate-900 text-white px-6 py-2.5 rounded-xl font-bold whitespace-nowrap transition">Sushis 1</button>
+                <button onclick="filter('sushi2', event)" class="filter-btn bg-white border-2 border-slate-200 text-slate-600 px-6 py-2.5 rounded-xl font-bold whitespace-nowrap hover:border-slate-300 transition">Sushis 2</button>
+                <button onclick="filter('plateaux', event)" class="filter-btn bg-white border-2 border-slate-200 text-slate-600 px-6 py-2.5 rounded-xl font-bold whitespace-nowrap hover:border-slate-300 transition">Plateaux</button>
+                <button onclick="filter('woks', event)" class="filter-btn bg-white border-2 border-slate-200 text-slate-600 px-6 py-2.5 rounded-xl font-bold whitespace-nowrap hover:border-slate-300 transition">Nos Woks</button>
+            </div>
         </div>
-      </div>
-    </div> <!-- /.container -->
-  </div> <!-- /.site-footer -->
 
-  <div id="overlayer"></div>
-  <div class="loader">
-    <div class="spinner-border" role="status">
-      <span class="sr-only">Loading...</span>
-    </div>
-  </div>
+        <div id="menu-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8"></div>
 
-  <script>
-    (function() {
-        // 1. Paramètres pour ton SaaS (Nom exact pour Supabase)
-        const config = {
-            name: "Wok N Sushi", 
-            logo: "https://woknsushi.com/images/logo.png",
-            google: "https://g.page/r/CdwF8R35T_ndEAE/review"
+        <div class="mt-16 text-center">
+             <span data-glf-cuid="c8170d73-5d5e-4191-baae-dcbe6befeda4" data-glf-ruid="3f06883e-6ccd-4bea-8b71-ae52570ab7f9" 
+               class="glf-button !px-16 !py-6 !text-lg">
+                VOIR TOUTE LA CARTE & COMMANDER
+            </span>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-[#FAFAFA] border-t-2 border-slate-200 pt-20 pb-10 px-6 text-center md:text-left">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 mb-16">
+            <div>
+                <h3 class="text-5xl font-asian mb-6 text-slate-900 italic">WOK <span class="text-red-600">&</span> SUSHI</h3>
+                <p class="text-slate-500 font-medium">L'authenticité et la fraîcheur à Colomiers.</p>
+            </div>
+            <div>
+                <h4 class="font-black uppercase text-xs tracking-widest mb-6 text-slate-400">Contact</h4>
+                <address class="not-italic text-slate-800 space-y-2 font-bold">
+                    <p>📍 1 Pl des Monts Dore, 31770 Colomiers</p>
+                    <p>📞 <a href="tel:0561859259" class="text-red-600">05 61 85 92 59</a></p>
+                </address>
+            </div>
+            <div>
+                <h4 class="font-black uppercase text-xs tracking-widest mb-6 text-slate-400">Horaires 🏮</h4>
+                <ul class="text-slate-800 font-medium text-sm">
+                    <li>Lun - Sam : 11:30-14:30 / 18:30-22:30</li>
+                    <li class="text-red-600 font-bold">Dimanche : Fermé</li>
+                </ul>
+            </div>
+        </div>
+        <p class="text-center text-[10px] text-slate-400 font-bold uppercase tracking-[0.3em] border-t pt-8">
+            &copy; 2026 WOK & SUSHI - DESIGN BY GABY & LCDIGITALE.FR
+        </p>
+    </footer>
+
+    <script>
+        // DONNÉES DU MENU
+        const menuData = {
+            sushi1: [
+                { name: "Entrées Mix 🥟", desc: "Nems, Samossa, Gyoza", price: "6.90", img: "images/sushi1/1.webp" },
+                { name: "Salades Fraiches 🥗", desc: "Base choux ou riz", price: "11.90", img: "images/sushi1/2.webp" },
+                { name: "Chirashi Saumon 🐟", desc: "Poisson frais & riz", price: "16.50", img: "images/sushi1/4.webp" },
+                { name: "California Rolls 🍣", desc: "Saumon Avocat Cheese", price: "6.50", img: "images/sushi1/6.webp" }
+            ],
+            sushi2: [
+                { name: "Crispy x6 🍣", desc: "Croustillant maison", price: "7.50", img: "images/sushi1/9.webp" },
+                { name: "Maki x6 🍣", desc: "Thon ou Saumon", price: "5.00", img: "images/sushi1/10.webp" },
+                { name: "Dragon Rolls 🐲", desc: "La spécialité signature", price: "10.90", img: "images/sushi1/13.webp" },
+                { name: "Sushi Thon x6", desc: "Fines tranches de thon", price: "11.00", img: "images/sushi1/11.webp" }
+            ],
+            plateaux: [
+                { name: "Party Mix x50 🍱", desc: "Format partagé", price: "45.00", img: "images/sushi1/15.webp" },
+                { name: "Family x72 🍱", desc: "Format géant", price: "64.00", img: "images/sushi1/15.webp" }
+            ],
+            woks: [
+                { name: "Wok Poulet 🍜", desc: "Nouilles & Légumes", price: "12.00", img: "images/sushi1/wok/20.web.png" },
+                { name: "Wok Crevettes 🍤", desc: "Sauce au choix", price: "13.00", img: "images/sushi1/wok/23.webp" }
+            ]
         };
 
+        function filter(cat, event) {
+            const grid = document.getElementById('menu-grid');
+            const btns = document.querySelectorAll('.filter-btn');
+            btns.forEach(b => {
+                b.classList.remove('active', 'bg-slate-900', 'text-white');
+                b.classList.add('bg-white', 'text-slate-600');
+            });
+            if(event) {
+                event.target.classList.remove('bg-white', 'text-slate-600');
+                event.target.classList.add('active', 'bg-slate-900', 'text-white');
+            }
+
+            grid.innerHTML = menuData[cat].map(item => `
+                <div class="bg-white border-2 border-slate-100 rounded-[28px] p-3 hover:border-red-600 transition shadow-sm hover:shadow-xl duration-300 transform hover:-translate-y-1">
+                    <div class="overflow-hidden rounded-[20px] mb-4 bg-slate-50">
+                        <img src="${item.img}" class="w-full aspect-square object-cover hover:scale-110 transition duration-500">
+                    </div>
+                    <h3 class="font-black uppercase text-sm mb-1 px-1 tracking-tighter">${item.name}</h3>
+                    <p class="text-[10px] text-slate-400 font-bold mb-4 uppercase tracking-tighter px-1">${item.desc}</p>
+                    <div class="flex justify-between items-center bg-slate-50 p-2 rounded-xl">
+                        <span class="font-black text-red-600 text-lg ml-2">${item.price}€</span>
+                        <span class="glf-button !px-4 !py-2 !text-[10px]" data-glf-cuid="c8170d73-5d5e-4191-baae-dcbe6befeda4" data-glf-ruid="3f06883e-6ccd-4bea-8b71-ae52570ab7f9">GO</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        filter('sushi1');
+
+       // --- LOGIQUE DU JEU ---
+    const config = {
+        name: "Wok N Sushi",
+        logo: "https://woknsushi.com/images/logo.png",
+        google: "https://g.page/r/CdwF8R35T_ndEAE/review"
+    };
+
+    window.openWokGame = function() {
         const overlay = document.getElementById('game-popup-overlay');
         const iframe = document.getElementById('game-iframe-wok');
+        const params = new URLSearchParams(config);
+        
+        // On injecte l'URL et on affiche
+        iframe.src = `https://restaurantgame.netlify.app/?${params.toString()}`;
+        overlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Bloque le scroll
+    };
 
-        // Fonction pour ouvrir et charger le jeu
-        window.openWokGame = function() {
-            if(overlay && iframe) {
-                const params = new URLSearchParams(config);
-                iframe.src = `https://restaurantgame.netlify.app/?${params.toString()}`;
-                overlay.style.display = 'flex';
-                document.body.style.overflow = 'hidden'; // Bloque le scroll du site
-            }
-        };
+    window.closeWokGame = function() {
+        const overlay = document.getElementById('game-popup-overlay');
+        const iframe = document.getElementById('game-iframe-wok');
+        
+        overlay.classList.add('hidden');
+        iframe.src = ''; // Coupe le son du jeu
+        document.body.style.overflow = ''; // Relance le scroll
+    };
 
-        // Fonction pour fermer proprement
-        window.closeWokGame = function() {
-            overlay.style.display = 'none';
-            iframe.src = ''; // Stop le jeu et le son
-            document.body.style.overflow = ''; // Relance le scroll du site
-        };
+    // Lancement auto après 3 secondes
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(openWokGame, 3000);
+    });
+    </script>
 
-        // 2. Déclencheur automatique (3 secondes)
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(openWokGame, 3000);
-            
-            // Fermeture au clic sur le fond sombre
-            overlay.onclick = function(e) {
-                if (e.target === overlay) closeWokGame();
-            };
-        });
-    })();
-</script>
-
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.fancybox.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/custom.js"></script>
-  <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async ></script>
-
-
-
+    <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
 </body>
-
 </html>
