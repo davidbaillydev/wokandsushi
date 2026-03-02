@@ -8,6 +8,15 @@
 
     <title>Wok & Sushi Colomiers | L'art du Wok & du Sushi</title>
     <meta name="description" content="Découvrez le menu de Wok & Sushi à Colomiers. Woks minute, sushis frais et spécialités thaï. Commandez en ligne !">
+    <meta name="google-site-verification" content="AxSk9Ei1cSBboTqwZnCj-IP9b5JUjN_JeDp9BBCozR8" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-401937026"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-401937026');
+    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
@@ -15,7 +24,7 @@
     <style>
         /* --- STYLE FORCÉ POUR GLORIAFOOD (Le fix) --- */
         .glf-button {
-            background-color: #dc2626 !important;
+            background-color: #dc2626 !important; /* Rouge Red-600 */
             color: white !important;
             font-family: 'Inter', sans-serif !important;
             font-weight: 900 !important;
@@ -32,11 +41,12 @@
             text-align: center !important;
         }
         .glf-button:hover {
-            background-color: #b91c1c !important;
+            background-color: #b91c1c !important; /* Rouge plus foncé */
             transform: translateY(-2px) !important;
             box-shadow: 0 20px 25px -5px rgba(220, 38, 38, 0.4) !important;
         }
 
+        /* Animation de battement pour le bouton de la nav */
         @keyframes pulse-red {
             0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
             70% { box-shadow: 0 0 0 15px rgba(220, 38, 38, 0); }
@@ -44,6 +54,7 @@
         }
         .pulse { animation: pulse-red 2s infinite; }
 
+        /* Animations Signature */
         @keyframes rotating { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         .rotating { animation: rotating 35s linear infinite; }
         .rotating2 { animation: rotating 25s linear infinite reverse; }
@@ -62,12 +73,11 @@
 <body class="text-slate-900 overflow-x-hidden">
 
     <div id="game-popup-overlay" class="fixed inset-0 bg-black/95 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-sm">
-    <div class="relative w-full max-w-[400px] aspect-[9/16] bg-transparent rounded-3xl overflow-hidden">
-        <button onclick="closeWokGame()" class="absolute top-4 right-4 bg-red-600 text-white w-10 h-10 rounded-full font-bold z-[110] hover:scale-110 transition shadow-lg">✕</button>
-        
-        <iframe id="game-iframe-wok" src="" class="w-full h-full border-none" allow="clipboard-write"></iframe>
+        <div class="relative w-full max-w-[400px] aspect-[9/16] bg-transparent rounded-3xl overflow-hidden">
+            <button onclick="closeWokGame()" class="absolute top-4 right-4 bg-red-600 text-white w-10 h-10 rounded-full font-bold z-[110] hover:scale-110 transition shadow-lg">✕</button>
+            <iframe id="game-iframe-wok" src="" class="w-full h-full border-none" allow="clipboard-write"></iframe>
+        </div>
     </div>
-</div>
 
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -90,19 +100,23 @@
 
     <section id="home" class="relative pt-36 pb-20 px-6 overflow-hidden bg-[#FAFAFA]">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            
             <div class="text-center lg:text-left z-10">
                 <div class="inline-block bg-slate-900 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
                     ⛩️ L'EXCELLENCE ASIATIQUE À COLOMIERS
                 </div>
+                
                 <h1 class="text-5xl md:text-[4.8rem] font-black uppercase tracking-tighter text-slate-900 leading-[1] mb-2">
                     L'art du Wok
                 </h1>
                 <div class="font-asian text-7xl md:text-[8rem] text-red-600 leading-[0.8] mb-8 drop-shadow-sm">
                     & du Sushi.
                 </div>
+                
                 <p class="text-slate-500 text-lg mb-10 max-w-md mx-auto lg:mx-0 font-medium leading-relaxed">
                     Savoir-faire artisanal et rapidité du Fast-Good. Chaque plat est une pièce maîtresse préparée à la minute.
                 </p>
+                
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <span data-glf-cuid="c8170d73-5d5e-4191-baae-dcbe6befeda4" data-glf-ruid="3f06883e-6ccd-4bea-8b71-ae52570ab7f9" 
                           class="glf-button !px-10 !py-5 !text-base">
@@ -126,8 +140,8 @@
     <div class="relative z-20 -mt-6 pb-12">
         <div class="bg-red-600 py-4 transform -rotate-1 shadow-xl overflow-hidden whitespace-nowrap border-y-4 border-red-700">
             <div class="animate-marquee text-white font-black text-2xl uppercase tracking-[0.15em] opacity-95">
-                <span>⛩️ L'ART DU WOK • 🏮 SAVEURS D'ASIE • 🥢 FRAÎCHEUR GARANTIE • 🍣 SUSHI MASTER • 🐉 RECETTES MAISON • 🌸 ZEN & GOÛT • </span>
-                <span>⛩️ L'ART DU WOK • 🏮 SAVEURS D'ASIE • 🥢 FRAÎCHEUR GARANTIE • 🍣 SUSHI MASTER • 🐉 RECETTES MAISON • </span>
+                <span>⛩️ L'ART DU WOK • 🏮 SAVEURS D'ASIE • 🥢 FRAÎCHEUR GARANTIE • 🍣 SUSHI MASTER • 🐉 RECETTES MAISON • 🌸 ZEN & GOÛT • ⛩️ L'ART DU WOK • 🏮 SAVEURS D'ASIE • 🥢 FRAÎCHEUR GARANTIE • 🍣 SUSHI MASTER • 🐉 RECETTES MAISON • </span>
+                <span>⛩️ L'ART DU WOK • 🏮 SAVEURS D'ASIE • 🥢 FRAÎCHEUR GARANTIE • 🍣 SUSHI MASTER • 🐉 RECETTES MAISON • 🌸 ZEN & GOÛT • ⛩️ L'ART DU WOK • 🏮 SAVEURS D'ASIE • 🥢 FRAÎCHEUR GARANTIE • 🍣 SUSHI MASTER • 🐉 RECETTES MAISON • </span>
             </div>
         </div>
     </div>
@@ -157,6 +171,34 @@
         </div>
     </section>
 
+    <section id="testimonials" class="bg-slate-900 py-24 px-6 text-white border-t-8 border-red-600">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-6xl font-asian text-center mb-16 italic text-red-500 underline decoration-white/10 underline-offset-8">Avis des Wok-Lovers</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white/5 p-10 rounded-3xl border border-white/10 hover:border-red-500/50 transition duration-500">
+                    <p class="text-lg italic mb-6 leading-relaxed">"Je tiens à remercier et à féliciter les nouveaux propriétaires pour ce délicieux moment passé dans leur établissement."</p>
+                    <div class="flex items-center gap-4 text-red-500 font-bold text-xl">★★★★★ <span class="text-white text-sm font-medium">G. Avis Google</span></div>
+                </div>
+                <div class="bg-white/5 p-10 rounded-3xl border border-white/10 hover:border-red-500/50 transition duration-500">
+                    <p class="text-lg italic mb-6 leading-relaxed">"Une très belle découverte 🥰 Excellente cuisine, tout est frais, beaucoup de saveur. Les samossas succulents !!!"</p>
+                    <div class="flex items-center gap-4 text-red-500 font-bold text-xl">★★★★★ <span class="text-white text-sm font-medium">Avis Client</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-white">
+        <h2 class="text-5xl font-asian text-center mb-12 uppercase tracking-tighter">Nos Créations 🥢</h2>
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <img src="images/galery/galery/1.webp" class="rounded-2xl aspect-square object-cover hover:scale-105 transition duration-300 shadow-md cursor-pointer" alt="Food">
+            <img src="images/galery/galery/2.webp" class="rounded-2xl aspect-square object-cover hover:scale-105 transition duration-300 shadow-md cursor-pointer" alt="Food">
+            <img src="images/galery/galery/3.webp" class="rounded-2xl aspect-square object-cover hover:scale-105 transition duration-300 shadow-md cursor-pointer" alt="Food">
+            <img src="images/galery/galery/4.webp" class="rounded-2xl aspect-square object-cover hover:scale-105 transition duration-300 shadow-md cursor-pointer" alt="Food">
+            <img src="images/galery/galery/5.webp" class="rounded-2xl aspect-square object-cover hover:scale-105 transition duration-300 shadow-md cursor-pointer" alt="Food">
+            <img src="images/galery/galery/6.webp" class="rounded-2xl aspect-square object-cover hover:scale-105 transition duration-300 shadow-md cursor-pointer" alt="Food">
+        </div>
+    </section>
+
     <footer id="contact" class="bg-[#FAFAFA] border-t-2 border-slate-200 pt-20 pb-10 px-6 text-center md:text-left">
         <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 mb-16">
             <div>
@@ -174,7 +216,7 @@
                 <h4 class="font-black uppercase text-xs tracking-widest mb-6 text-slate-400">Horaires 🏮</h4>
                 <ul class="text-slate-800 font-medium text-sm">
                     <li>Lun - Sam : 11:30-14:30 / 18:30-22:30</li>
-                    <li class="text-red-600 font-bold">Dimanche : Fermé</li>
+                    <li class="text-red-600 font-bold mt-2">Dimanche : Fermé</li>
                 </ul>
             </div>
         </div>
@@ -184,7 +226,6 @@
     </footer>
 
     <script>
-        // DONNÉES DU MENU
         const menuData = {
             sushi1: [
                 { name: "Entrées Mix 🥟", desc: "Nems, Samossa, Gyoza", price: "6.90", img: "images/sushi1/1.webp" },
@@ -235,39 +276,39 @@
             `).join('');
         }
 
+        // Init Menu au chargement
         filter('sushi1');
 
-       // --- LOGIQUE DU JEU ---
-    const config = {
-        name: "Wok N Sushi",
-        logo: "https://woknsushi.com/images/logo.png",
-        google: "https://g.page/r/CdwF8R35T_ndEAE/review"
-    };
+        // --- LOGIQUE DU JEU ---
+        const config = {
+            name: "Wok N Sushi",
+            logo: "https://woknsushi.com/images/logo.png",
+            google: "https://g.page/r/CdwF8R35T_ndEAE/review"
+        };
 
-    window.openWokGame = function() {
-        const overlay = document.getElementById('game-popup-overlay');
-        const iframe = document.getElementById('game-iframe-wok');
-        const params = new URLSearchParams(config);
-        
-        // On injecte l'URL et on affiche
-        iframe.src = `https://restaurantgame.netlify.app/?${params.toString()}`;
-        overlay.classList.remove('hidden');
-        document.body.style.overflow = 'hidden'; // Bloque le scroll
-    };
+        window.openWokGame = function() {
+            const overlay = document.getElementById('game-popup-overlay');
+            const iframe = document.getElementById('game-iframe-wok');
+            const params = new URLSearchParams(config);
+            
+            iframe.src = `https://restaurantgame.netlify.app/?${params.toString()}`;
+            overlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Empêche de scroller derrière
+        };
 
-    window.closeWokGame = function() {
-        const overlay = document.getElementById('game-popup-overlay');
-        const iframe = document.getElementById('game-iframe-wok');
-        
-        overlay.classList.add('hidden');
-        iframe.src = ''; // Coupe le son du jeu
-        document.body.style.overflow = ''; // Relance le scroll
-    };
+        window.closeWokGame = function() {
+            const overlay = document.getElementById('game-popup-overlay');
+            const iframe = document.getElementById('game-iframe-wok');
+            
+            overlay.classList.add('hidden');
+            iframe.src = ''; // Arrête la musique du jeu
+            document.body.style.overflow = ''; // Réactive le scroll
+        };
 
-    // Lancement auto après 3 secondes
-    document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(openWokGame, 3000);
-    });
+        // Lancement auto après 3 secondes
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(openWokGame, 9000);
+        });
     </script>
 
     <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
