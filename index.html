@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- STYLE FORCÉ POUR GLORIAFOOD (Le fix) --- */
+        /* --- STYLE BOUTONS COMMANDE --- */
         .glf-button {
             background-color: #dc2626 !important; /* Rouge Red-600 */
             color: white !important;
@@ -91,7 +91,7 @@
                 <a href="#contact" class="hover:text-red-600 transition">Contact</a>
             </div>
 
-            <span data-glf-cuid="c8170d73-5d5e-4191-baae-dcbe6befeda4" data-glf-ruid="3f06883e-6ccd-4bea-8b71-ae52570ab7f9" 
+            <span onclick="event.preventDefault();window.LCDigitale&&LCDigitale.open('woknsushi')" style="cursor:pointer" 
                class="glf-button pulse">
                 COMMANDER
             </span>
@@ -118,7 +118,7 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <span data-glf-cuid="c8170d73-5d5e-4191-baae-dcbe6befeda4" data-glf-ruid="3f06883e-6ccd-4bea-8b71-ae52570ab7f9" 
+                    <span onclick="event.preventDefault();window.LCDigitale&&LCDigitale.open('woknsushi')" style="cursor:pointer" 
                           class="glf-button !px-10 !py-5 !text-base">
                         Voir le Menu & Commander
                     </span>
@@ -164,7 +164,7 @@
         <div id="menu-grid" class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8"></div>
 
         <div class="mt-16 text-center">
-             <span data-glf-cuid="c8170d73-5d5e-4191-baae-dcbe6befeda4" data-glf-ruid="3f06883e-6ccd-4bea-8b71-ae52570ab7f9" 
+             <span onclick="event.preventDefault();window.LCDigitale&&LCDigitale.open('woknsushi')" style="cursor:pointer" 
                class="glf-button !px-16 !py-6 !text-lg">
                 VOIR TOUTE LA CARTE & COMMANDER
             </span>
@@ -270,7 +270,7 @@
                     <p class="text-[10px] text-slate-400 font-bold mb-4 uppercase tracking-tighter px-1">${item.desc}</p>
                     <div class="flex justify-between items-center bg-slate-50 p-2 rounded-xl">
                         <span class="font-black text-red-600 text-lg ml-2">${item.price}€</span>
-                        <span class="glf-button !px-4 !py-2 !text-[10px]" data-glf-cuid="c8170d73-5d5e-4191-baae-dcbe6befeda4" data-glf-ruid="3f06883e-6ccd-4bea-8b71-ae52570ab7f9">GO</span>
+                        <span class="glf-button !px-4 !py-2 !text-[10px]" onclick="event.preventDefault();window.LCDigitale&&LCDigitale.open('woknsushi')" style="cursor:pointer">GO</span>
                     </div>
                 </div>
             `).join('');
@@ -307,10 +307,10 @@
 
         // Lancement auto après 3 secondes
         document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(openWokGame, 9000);
+            // setTimeout(openWokGame, 9000); // ouverture auto désactivée, lancement manuel uniquement
         });
     </script>
 
-    <script src="https://www.fbgcdn.com/embedder/js/ewm2.js" defer async></script>
+    <div id="lc-hidden" hidden></div><script src="https://restaurant.lcdigitale.fr/embed.js" data-restaurant="woknsushi" data-mode="inline" data-target="#lc-hidden" async></script>
 </body>
 </html>
